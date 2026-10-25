@@ -2,6 +2,8 @@
 
 Four-bar melodic figure desk for bedroom producers and AI-music finishers.
 
+**Live:** https://figurefour.vercel.app
+
 The loop has chords and a pocket. It has no signature line. Session players write a short repeating figure (FluidR3 violin) so the section finally has something memorable to finish around.
 
 Live samples only — FluidR3 acoustic grand, upright bass, violin, and acoustic kit from the PreEight sample bank pinned to commit `d58301e4a494555f411a2afbc448b724136eee76`.
@@ -34,6 +36,10 @@ WAV (48 kHz, 24-bit stereo, first downbeat at sample 0, tail folded for seamless
 
 At 92 BPM and 4 bars the loop is exactly 500,870 samples (`Math.round(4 * 4 * 60 / 92 * 48000)`). For the 8-bar acceptance check, set Bars to 8.
 
+## Mobile onboarding
+
+Tap the "Tap to start audio" gate on first load to create/resume the AudioContext. On iOS, the silent switch mutes Web Audio (noted in the footer). On tab hide, playback stops cleanly; returning shows the stopped state.
+
 ## Pricing recommendation
 
 **One-time $19** on Gumroad or Lemon Squeezy. This is a finite desk, not a recurring studio. Optional $9 add-on inside Forge Pass ($24/mo). Do not put the core tool behind a monthly meter.
@@ -44,7 +50,7 @@ This build is free (no license gate). If priced later, add a Lemon Squeezy key c
 
 ## Stack
 
-Static HTML/CSS/JS. Deploy on Vercel team `release-forge`.
+Static HTML/CSS/JS. Deploy on Vercel team `release-forge`. Permanent live deployment: https://figurefour.vercel.app
 
 ## Acceptance checks (section 9)
 
@@ -55,6 +61,8 @@ Static HTML/CSS/JS. Deploy on Vercel team `release-forge`.
 5. Block sample host, reload → UI names missing instruments.
 6. Hold longest pad (held-fifth recipe) at slowest tempo → sustains to end of note.
 7. Grep: no `@main` or `@gh-pages`, no `Math.random` in export path, voice names match samples.
+
+See `docs/acceptance-report.md` for code-review results.
 
 ## License
 
