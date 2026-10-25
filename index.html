@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FigureFour — four-bar melodic figure desk</title>
+  <meta name="description" content="Four live-instrument bars that put a signature figure on the loop you already have." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>FigureFour</h1>
+    <p class="lede">The loop has chords and a pocket. It has no signature line. Session players write a short repeating figure so the section finally has something memorable to finish around. Live FluidR3 violin over piano, upright, and kit.</p>
+    <p id="status">Tap to seat the chairs.</p>
+  </header>
+  <main>
+    <div class="row">
+      <label>BPM <input id="bpm" type="number" min="60" max="180" value="92" /></label>
+      <label>Key
+        <select id="key">
+          <option>A minor</option><option>C major</option><option>D minor</option>
+          <option>E minor</option><option>G major</option><option>F major</option>
+          <option>Bb major</option><option>Eb major</option>
+        </select>
+      </label>
+      <label>Chords <input id="chords" value="Am F C G" /></label>
+      <label>Bars <input id="bars" type="number" min="4" max="16" value="4" /></label>
+    </div>
+    <div class="row" id="recipes"></div>
+    <div class="row">
+      <button id="sideA" type="button">A · pocket</button>
+      <button id="sideB" type="button" class="on">B · figure</button>
+      <button id="play" type="button" class="hot">Play</button>
+      <button id="stop" type="button">Stop</button>
+      <button id="wav" type="button">WAV loop</button>
+      <button id="wavTail" type="button">WAV with tail</button>
+      <button id="mid" type="button">MIDI</button>
+    </div>
+    <div class="row" id="mutes"></div>
+    <div class="bars" id="barsView"></div>
+    <p id="blurb"></p>
+    <p id="punch"></p>
+    <footer>iOS silent switch mutes Web Audio. This build is free. Drop the file on bar 1 of the session. Distinct from TagFour, LiftTwo, PreEight, CallFour, StabFour.</footer>
+  </main>
+  <div class="gate" id="gate"><button id="arm" type="button">Tap to start audio</button></div>
+  <script src="app.js"></script>
+</body>
+</html>

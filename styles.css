@@ -1,0 +1,44 @@
+:root {
+  --bg: #12140f;
+  --ink: #efe7d2;
+  --dim: #a39880;
+  --line: #2c3124;
+  --air: #d7e26a;
+  --print: #e7b56a;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Iowan Old Style", Palatino, Georgia, serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+header, main { max-width: 920px; margin: 0 auto; padding: 20px; }
+h1 { font-weight: 500; letter-spacing: 0.04em; margin: 0 0 4px; }
+.lede { color: var(--dim); margin: 0 0 16px; }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: end; margin-bottom: 12px; }
+label { display: flex; flex-direction: column; gap: 4px; font-size: 12px; color: var(--dim); letter-spacing: 0.06em; text-transform: uppercase; }
+input, select, button {
+  font: inherit;
+  color: var(--ink);
+  background: #1b1e16;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+button { cursor: pointer; }
+button.hot { background: var(--air); color: #1a1c12; border-color: transparent; }
+button.on { outline: 1px solid var(--air); }
+.bars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 12px 0; }
+.bar { border: 1px solid var(--line); padding: 8px 6px; min-height: 64px; border-radius: 6px; }
+.bar b { display: block; font-size: 12px; color: var(--dim); }
+.bar.now { border-color: var(--air); background: #222618; }
+.bar.thin { opacity: 0.55; }
+#punch, #status { white-space: pre-wrap; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; color: var(--dim); }
+.gate {
+  position: fixed; inset: 0; background: rgba(10,12,8,0.92);
+  display: flex; align-items: center; justify-content: center;
+}
+.gate button { font-size: 18px; padding: 16px 22px; }
+.hidden { display: none; }
+footer { color: var(--dim); font-size: 13px; }
