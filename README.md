@@ -38,7 +38,11 @@ At 92 BPM and 4 bars the loop is exactly 500,870 samples (`Math.round(4 * 4 * 60
 
 ## Mobile onboarding
 
-Tap the "Tap to start audio" gate on first load to create/resume the AudioContext. On iOS, the silent switch mutes Web Audio (noted in the footer). On tab hide, playback stops cleanly; returning shows the stopped state.
+- **Tap to start.** Browsers keep audio locked until you touch the page. Tap the **Tap to start audio** button first; it creates and resumes the audio engine, then loads the samples.
+- **iOS: turn the ring/silent switch off.** With the switch on silent, iOS may mute Web Audio even when media volume is up.
+- **Use headphones or turn the volume up.** Phone speakers drop most of the bass and kick.
+- **No MIDI keyboard on iOS.** iOS Safari doesn't support Web MIDI. FigureFour doesn't need it: every control is on screen (BPM, key, chords, recipes, mutes, Play/Stop, exports).
+- When you switch away from the tab, playback stops cleanly. Press Play again when you come back.
 
 ## Pricing recommendation
 
@@ -62,7 +66,7 @@ Static HTML/CSS/JS. Deploy on Vercel team `release-forge`. Permanent live deploy
 6. Hold longest pad (held-fifth recipe) at slowest tempo → sustains to end of note.
 7. Grep: no `@main` or `@gh-pages`, no `Math.random` in export path, voice names match samples.
 
-See `docs/acceptance-report.md` for code-review results.
+See `docs/acceptance-report.md` for results (code review plus local headless-browser export tests).
 
 ## License
 
